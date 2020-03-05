@@ -15,7 +15,7 @@ puts "Création des seeds ..."
 seed = 1
 5.times do
   Email.create(
-    object: Faker::Lorem.words,
+    object: Faker::Artist.name,
     body: Faker::Lorem.sentence)
     puts "Création du seed #{seed}"
     seed += 1
