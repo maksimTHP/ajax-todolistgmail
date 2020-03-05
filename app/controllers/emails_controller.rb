@@ -5,7 +5,12 @@ before_action :authenticate_user!
   end
 
   def show
-    @show_email = Email.find(params[:id])
+    @mail = Email.find(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to email_path(@email.id) }
+      format.js {}
+    end
   end
 
   def new
@@ -13,22 +18,17 @@ before_action :authenticate_user!
 
   def create
 
-    @new_email = Email.create(object: Faker::Artist.name, body: Faker::Lorem.sentence)
+    @mail = Email.create(object: Faker::Artist.name, body: Faker::Lorem.paragraph)
 
-    if @new_email.save
+    if @mail.save
       puts "Tu as reçu un email."
       flash[:notice] = "Tu as reçu un email."
       redirect_to emails_index_path
     end
 
     respond_to do |format|
-      format.html do
-        #code en cas de requête classique
-      end
-
-      format.js do
-        #code en cas de requête AJAX
-      end
+      format.html { redirect_to root_path }
+      format.js {}
     end
   end
 
@@ -39,7 +39,14 @@ before_action :authenticate_user!
   end
 
   def destroy
+    @mail = Email.find(params[:id])
+    @mail.destroy
+
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {}
+    end
+
   end
-
-
 end

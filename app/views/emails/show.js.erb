@@ -1,2 +1,2 @@
-document.getElementById("body_received_emails").style.display = "none";
-document.getElementById("body_received_emails").insertAdjacentHTML('beforebegin', "<%= j render 'full_mail_display'%>")
+document.getElementById("body_received_emails").innerHTML = ""
+document.getElementById("body_received_emails").insertAdjacentHTML('beforeend', "<%= j render 'full_mail_display'%>")

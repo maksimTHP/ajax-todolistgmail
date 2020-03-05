@@ -7,6 +7,7 @@
 
 <hr>
 <div id="received_emails" class="row">
+
 <ul id="object_received_emails" class="col-4">
   <% @mails.each do |a|%>
   <li><%= link_to "Lire l'email", email_path(a.id), remote: true %></li>
@@ -18,9 +19,5 @@
   <% @mails.each do |a|%>
   <li><%= a.body %></li>
   <% end %>
-
-
-
-
 <ul>
 </div>
