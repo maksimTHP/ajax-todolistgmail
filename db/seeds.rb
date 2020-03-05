@@ -5,15 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 require 'faker'
-3.times do
-  my_category = Category.create(title: Faker::Book.genre)
-  3.times do
-    my_task = Task.new(title: Faker::Book.title,
-                      deadline: Faker::Date.forward(23),
-                      image: Faker::Avatar.image)
-    my_task.category = my_category
-    my_task.save
-  end
+
+puts "Réinitialisation de la table Email"
+Email.destroy_all
+puts "Table Email réinitialisée"
+
+puts "Création des seeds ..."
+seed = 1
+5.times do
+  Email.create(
+    object: Faker::Lorem.words,
+    body: Faker::Lorem.sentence)
+    puts "Création du seed #{seed}"
+    seed += 1
 end
+puts "Création des seeds terminées."

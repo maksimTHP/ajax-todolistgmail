@@ -1,0 +1,16 @@
+<h1>Emails#index</h1>
+
+<div class="row">
+<ul class="col-4">
+  <% @mails.each do |a|%>
+  <li><%= a.object %></li>
+  <% end %>
+</ul>
+
+
+<ul class="col-4">
+  <% @mails.each do |a|%>
+  <li><%= a.body %></li>
+  <% end %>
+<ul>
+</div>
