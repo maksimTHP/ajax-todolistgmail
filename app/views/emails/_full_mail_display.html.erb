@@ -6,5 +6,7 @@
   <p class="row">
     <%= @mail.body %>
   </p>
+  <%= link_to "Delete", email_path(@mail.id), class:"btn btn-danger", data:{method: "DELETE"}, remote: true %>
+
 
 </div>
