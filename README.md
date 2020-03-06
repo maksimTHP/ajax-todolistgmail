@@ -1,24 +1,36 @@
-# README
+# 📫 EmailViewer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Visite en ligne : https://ajax-exo-thp.herokuapp.com/
 
-Things you may want to cover:
+## :wrench: Installation en local
 
-* Ruby version
+### Configuration
+Entrez les commandes suivantes dans votre terminal préféré :
 
-* System dependencies
+`git clone https://github.com/maksimTHP/ajax-todolistgmail`
 
-* Configuration
+`cd ajax-todolistgmail`
 
-* Database creation
+`bundle install`
 
-* Database initialization
+### Database creation
 
-* How to run the test suite
+`rails db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails db:migrate`
 
-* Deployment instructions
+### Database initialisation
 
-* ...
+`rails db:seed`
+
+## 🔥 Connexion au site
+
+`rails server`
+
+Une fois le server connecté, rendez-vous sur :
+
+http://localhost:3000/
+
+
+Bonne visite !
+Bisous
