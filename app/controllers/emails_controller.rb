@@ -18,7 +18,7 @@ before_action :authenticate_user!
 
   def create
 
-    @mail = Email.create(object: Faker::Artist.name, body: Faker::Lorem.paragraph)
+    @mail = Email.create(object: Faker::Artist.name, body: Faker::Lorem.sentence)
 
     if @mail.save
       puts "Tu as reçu un email."

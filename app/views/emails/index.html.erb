@@ -6,18 +6,18 @@
 
 
 <hr>
-<div id="received_emails" class="row">
+<div id="received_emails" class="container row ml-4">
 
-<ul id="object_received_emails" class="col-4">
+<ul id="object_received_emails" class="col-4 list-group">
   <% @mails.each do |a|%>
-  <li><%= link_to "Lire l'email", email_path(a.id), remote: true %></li>
+  <li class="list-group-item"><%= link_to a.object, email_path(a.id), remote: true %></li>
   <% end %>
 </ul>
 
 
-<ul id="body_received_emails" class="col-4">
+<ul id="body_received_emails" class="col-4 list-group">
   <% @mails.each do |a|%>
-  <li><%= a.body %></li>
+  <li class="list-group-item"><%= a.body %></li>
   <% end %>
 <ul>
 </div>
