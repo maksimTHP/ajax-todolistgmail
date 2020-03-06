@@ -11,11 +11,9 @@ Projet01**
 1. ```$ git clone https://github.com/maksimTHP/ajax-todolistgmail.git```
 2. ```$ cd ajax-todolistgmail```
 3. ```$ bundle install```
-4. ```$ rails db:create``` # création de la BDD
-5. ```$ rails db:migrate``` # préparation des tableaux de la BDD
-6. ```$ rails db:seed``` # remplissage de la BDD avec des données
-7. ```$ rails s```
-8. http://localhost:3000/
+4. ```$ rails db:reset``` # Purge (db:drop) et crée (db:create) la BDD, charge le schéma (db:schema:load) des tableaux et les initialise avec les données de départ (db:seed). 
+5. ```$ rails s```
+6. http://localhost:3000/
 
 - Sur Heroku
 1. https://ajax-exo-thp.herokuapp.com/
