@@ -1,28 +1,28 @@
 <div class="container ml-4">
 
-<h1>Emails#index</h1>
+  <h1>Emails#index</h1>
 
+  <%= link_to "Recevoir un mail", emails_path, data:{method: "POST"}, class: "btn btn-primary", remote: true %>
 
+  <hr>
+  <div id="received_emails" class="container row ml-4">
 
-<%= link_to "Recevoir un mail", emails_path, data:{method: "POST"}, class: "btn btn-primary", remote: true %>
+    <ul id="object_received_emails" class="col-4 list-group">
+      <li class="list-group-item list-group-item-primary">
+        <p>Destinaire<p></li>
+          <% @mails.each do |a|%>
+            <li id="mail-n<%= a.id %>" class="list-group-item"><%= link_to a.object, email_path(a.id), remote: true %></li>
+          <% end %>
+    </ul>
 
-
-<hr>
-<div id="received_emails" class="container row ml-4">
-
-<ul id="object_received_emails" class="col-4 list-group">
-  <li class="list-group-item list-group-item-primary"><p>Destinaire<p></li>
-  <% @mails.each do |a|%>
-  <li id="mail-n<%= a.id %>" class="list-group-item"><%= link_to a.object, email_path(a.id), remote: true %></li>
-  <% end %>
-</ul>
-
-
-<ul id="body_received_emails" class="col-4 list-group">
-  <li class="list-group-item list-group-item-primary"><p>Contenu du message<p></li>
-  <% @mails.each do |a|%>
-  <li class="list-group-item"> <%= a.body %> </li>
-  <% end %>
-</ul>
-</div>
+    <ul id="body_received_emails" class="col-4 list-group">
+      <li class="list-group-item list-group-item-primary">
+        <p>Contenu du message<p></li>
+          <% @mails.each do |a|%>
+            <li class="list-group-item">
+              <%= a.body %>
+            </li>
+          <% end %>
+    </ul>
+  </div>
 </div>
