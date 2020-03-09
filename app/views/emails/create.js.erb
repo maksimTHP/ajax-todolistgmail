@@ -1,1 +1,2 @@
-document.getElementById("object_received_emails").insertAdjacentHTML("beforeend", "<%= j render 'mail'%>", email: @mail)
+document.querySelector('#object_received_emails').insertAdjacentHTML("beforeend", "<%= j render 'mail', a: @mail %>")
+document.querySelector('#body_received_emails').insertAdjacentHTML("beforeend", "<%= j render 'bodyemails', a: @mail %>")

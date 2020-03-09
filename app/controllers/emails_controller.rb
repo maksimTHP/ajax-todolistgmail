@@ -20,17 +20,22 @@ before_action :authenticate_user!
 
     @mail = Email.create(object: Faker::Artist.name, body: Faker::Lorem.sentence)
 
-    if @mail.save
-      puts "Tu as reçu un email."
-      flash[:notice] = "Tu as reçu un email."
-      redirect_to emails_index_path
-    end
+    # if @mail.save
+    #   puts "Tu as reçu un email."
+    #   flash[:notice] = "Tu as reçu un email."
+
 
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js {}
-    end
+      end
+    # end
   end
+
+
+
+
+
 
   def edit
   end
